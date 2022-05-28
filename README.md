@@ -28,4 +28,21 @@ func TestTwoSum(t *testing.T) {
 
 		//assert
 	})
+	t.Run("Example 2", func(t *testing.T) {
+
+		//arrange
+
+		//act
+
+		//assert
+	})
+
+	t.Run("Example 3", func(t *testing.T) {
+
+		//arrange
+
+		//act
+
+		//assert
+	})
 }```
