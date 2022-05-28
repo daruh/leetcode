@@ -54,12 +54,10 @@ func TestMergeTwoSortedLists(t *testing.T) {
 	*/
 	t.Run("Example 2", func(t *testing.T) {
 		//arrange
-		var (
-			l1 ListNode
-			l2 ListNode
-		)
+		var l1 *ListNode = nil
+		var l2 *ListNode = nil
 		//act
-		mergedList := mergeTwoLists(&l1, &l2)
+		mergedList := mergeTwoLists(l1, l2)
 		//assert
 		result := traverse(mergedList)
 		var expected []int
@@ -71,13 +69,13 @@ func TestMergeTwoSortedLists(t *testing.T) {
 	*/
 	t.Run("Example 3", func(t *testing.T) {
 		//arrange
-		var l1 ListNode
+		var l1 *ListNode = nil
 
 		l2 := ListNode{
 			Val: 0,
 		}
 		//act
-		mergedList := mergeTwoLists(&l1, &l2)
+		mergedList := mergeTwoLists(l1, &l2)
 		//assert
 		result := traverse(mergedList)
 		expected := []int{0}
