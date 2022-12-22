@@ -36,4 +36,22 @@ func TestRemoveDuplicates(t *testing.T) {
 		assert.Equal(t, 5, result)
 	})
 
+	t.Run("Example 3", func(t *testing.T) {
+		//arrange
+		nums := []int{0}
+		//act
+		result := removeDuplicates(nums)
+		//assert
+		assert.Equal(t, 1, result)
+	})
+
+	t.Run("Example 4", func(t *testing.T) {
+		//arrange
+		nums := []int{0, 1, 2, 3, 4, 5, 6, 7}
+		//act
+		result := removeDuplicates(nums)
+		//assert
+		assert.Equal(t, 8, result)
+	})
+
 }
