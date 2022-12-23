@@ -1,4 +1,4 @@
-package plus_one
+package add_binary
 
 import (
 	"github.com/stretchr/testify/assert"

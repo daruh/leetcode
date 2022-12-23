@@ -1,4 +1,4 @@
-package plus_one
+package add_binary
 
 func addBinary(a string, b string) string {
 
