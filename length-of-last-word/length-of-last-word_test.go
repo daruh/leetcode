@@ -49,4 +49,39 @@ func TestLengthOfLastWord(t *testing.T) {
 		assert.Equal(t, 6, result)
 	})
 
+	t.Run("Example 4", func(t *testing.T) {
+		//arrange
+		s := " luffy "
+		//act
+		result := lengthOfLastWord(s)
+		//assert
+		assert.Equal(t, 5, result)
+	})
+
+	t.Run("Example 5", func(t *testing.T) {
+		//arrange
+		s := "luffy"
+		//act
+		result := lengthOfLastWord(s)
+		//assert
+		assert.Equal(t, 5, result)
+	})
+
+	t.Run("Example 6", func(t *testing.T) {
+		//arrange
+		s := ""
+		//act
+		result := lengthOfLastWord(s)
+		//assert
+		assert.Equal(t, 0, result)
+	})
+
+	t.Run("Example 7", func(t *testing.T) {
+		//arrange
+		s := "  "
+		//act
+		result := lengthOfLastWord(s)
+		//assert
+		assert.Equal(t, 0, result)
+	})
 }
