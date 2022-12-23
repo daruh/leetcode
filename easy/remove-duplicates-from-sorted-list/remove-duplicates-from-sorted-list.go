@@ -9,5 +9,29 @@ type ListNode struct {
 
 func deleteDuplicates(head *ListNode) *ListNode {
 
-	return nil
+	if head == nil {
+		return head
+	}
+
+	var ptrNode, fwdNode *ListNode
+
+	ptrNode = head
+	fwdNode = ptrNode.Next
+
+	for fwdNode != nil {
+		valPtr := ptrNode.Val
+		valFwd := fwdNode.Val
+
+		if valPtr == valFwd {
+			fwdNode = fwdNode.Next
+		} else if valPtr != valFwd {
+			ptrNode.Next = fwdNode
+			ptrNode = fwdNode
+			fwdNode = fwdNode.Next
+		}
+	}
+
+	ptrNode.Next = nil
+
+	return head
 }
