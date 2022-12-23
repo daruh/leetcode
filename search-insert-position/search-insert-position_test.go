@@ -31,7 +31,7 @@ func TestRemoveElement(t *testing.T) {
 		//act
 		result := searchInsert(nums, target)
 		//assert
-		assert.Equal(t, 1, result)
+		assert.Equal(t, 2, result)
 	})
 	/*
 		Input: nums = [1,3,5,6], target = 7
@@ -46,6 +46,16 @@ func TestRemoveElement(t *testing.T) {
 		result := searchInsert(nums, target)
 		//assert
 		assert.Equal(t, 4, result)
+	})
+
+	t.Run("Example 4", func(t *testing.T) {
+		//arrange
+		nums := []int{2, 7, 8, 9, 10}
+		target := 9
+		//act
+		result := searchInsert(nums, target)
+		//assert
+		assert.Equal(t, 3, result)
 	})
 
 }
