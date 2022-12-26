@@ -9,5 +9,13 @@ type TreeNode struct {
 
 func inorderTraversal(root *TreeNode) []int {
 
-	return []int{}
+	if root == nil {
+		return []int{}
+	}
+
+	arrayLeft := inorderTraversal(root.Left)
+	arrayRight := inorderTraversal(root.Right)
+	l := append(arrayLeft, root.Val)
+	r := append(l, arrayRight...)
+	return r
 }

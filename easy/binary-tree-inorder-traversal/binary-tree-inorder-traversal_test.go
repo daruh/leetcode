@@ -54,4 +54,21 @@ func TestInorderTraversal(t *testing.T) {
 		assert.Equal(t, []int{1}, result)
 	})
 
+	t.Run("Example 4", func(t *testing.T) {
+		//arrange
+		tree := TreeNode{
+			Val: 1,
+			Left: &TreeNode{
+				Val: 2,
+			},
+			Right: &TreeNode{
+				Val: 3,
+			},
+		}
+		//act
+		result := inorderTraversal(&tree)
+		//assert
+		assert.Equal(t, []int{2, 1, 3}, result)
+	})
+
 }
