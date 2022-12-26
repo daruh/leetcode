@@ -60,4 +60,15 @@ func TestMerge(t *testing.T) {
 		//assert
 		assert.Equal(t, []int{1}, nums1)
 	})
+
+	t.Run("Example 4", func(t *testing.T) {
+		nums1 := []int{-1, 0, 0, 3, 3, 3, 0, 0, 0}
+		nums2 := []int{1, 2, 2}
+		m := 6
+		n := 3
+		//act
+		merge(nums1, m, nums2, n)
+		//assert
+		assert.Equal(t, []int{-1, 0, 0, 1, 2, 2, 3, 3, 3}, nums1)
+	})
 }
