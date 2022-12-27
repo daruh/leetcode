@@ -88,4 +88,27 @@ func TestIsSameTree(t *testing.T) {
 		//assert
 		assert.Equal(t, false, result)
 	})
+
+	t.Run("Example 4", func(t *testing.T) {
+		//arrange
+		tree1 := TreeNode{
+			Val: 1,
+			Left: &TreeNode{
+				Val: 2,
+				Right: &TreeNode{
+					Val: 3,
+				},
+			},
+			Right: &TreeNode{
+				Val: 2,
+				Left: &TreeNode{
+					Val: 3,
+				},
+			},
+		}
+		//act
+		result := isSymmetric(&tree1)
+		//assert
+		assert.Equal(t, true, result)
+	})
 }
