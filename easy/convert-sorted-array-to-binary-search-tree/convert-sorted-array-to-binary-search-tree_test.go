@@ -60,4 +60,25 @@ func TestSortedArrayToBST(t *testing.T) {
 		assert.True(t, isSameTree(outputTree1, result))
 	})
 
+	/*
+		Input: nums = [1,3]
+		Output: [3,1]
+		Explanation: [1,null,3] and [3,1] are both height-balanced BSTs.
+	*/
+	t.Run("Example 2", func(t *testing.T) {
+		//arrange
+		nums := []int{1, 3}
+		outputTree1 := &TreeNode{
+			Val: 3,
+			Left: &TreeNode{
+				Val: 1,
+			},
+		}
+
+		//act
+		result := sortedArrayToBST(nums)
+		//assert
+		assert.True(t, isSameTree(outputTree1, result))
+	})
+
 }
