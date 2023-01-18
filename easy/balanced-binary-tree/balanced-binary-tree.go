@@ -1,4 +1,4 @@
-package binary_tree_inorder_traversal
+package balanced_binary_tree
 
 import (
 	"math"

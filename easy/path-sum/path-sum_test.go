@@ -1,35 +1,49 @@
-package balanced_binary_tree
+package path_sum
 
 import (
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
-func TestBalancedBinaryTree(t *testing.T) {
+func TestPathSum(t *testing.T) {
 
 	/*
-		Input: root = [3,9,20,null,null,15,7]
+		Input: root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22
 		Output: true
+		Explanation: The root-to-leaf path with the target sum is shown.
 	*/
 	t.Run("Example 1", func(t *testing.T) {
 		//arrange
 		tree := TreeNode{
-			Val: 3,
+			Val: 5,
 			Left: &TreeNode{
-				Val: 9,
+				Val: 4,
+				Left: &TreeNode{
+					Val: 11,
+					Left: &TreeNode{
+						Val: 7,
+					},
+					Right: &TreeNode{
+						Val: 2,
+					},
+				},
 			},
 			Right: &TreeNode{
-				Val: 20,
+				Val: 8,
 				Left: &TreeNode{
-					Val: 15,
+					Val: 13,
 				},
 				Right: &TreeNode{
-					Val: 7,
+					Val: 4,
+					Right: &TreeNode{
+						Val: 1,
+					},
 				},
 			},
 		}
+		targetSum := 22
 		//act
-		result := isBalanced(&tree)
+		result := hasPathSum(&tree, targetSum)
 		//assert
 		assert.Equal(t, true, result)
 	})
@@ -44,24 +58,14 @@ func TestBalancedBinaryTree(t *testing.T) {
 			Val: 1,
 			Left: &TreeNode{
 				Val: 2,
-				Left: &TreeNode{
-					Val: 3,
-					Left: &TreeNode{
-						Val: 4,
-					}, Right: &TreeNode{
-						Val: 4,
-					},
-				},
-				Right: &TreeNode{
-					Val: 3,
-				},
 			},
 			Right: &TreeNode{
-				Val: 2,
+				Val: 3,
 			},
 		}
+		targetSum := 5
 		//act
-		result := isBalanced(&tree)
+		result := hasPathSum(&tree, targetSum)
 		//assert
 		assert.Equal(t, false, result)
 	})
@@ -73,10 +77,10 @@ func TestBalancedBinaryTree(t *testing.T) {
 	t.Run("Example 3", func(t *testing.T) {
 		//arrange
 		tree := TreeNode{}
+		targetSum := 0
 		//act
-		result := isBalanced(&tree)
+		result := hasPathSum(&tree, targetSum)
 		//assert
-		assert.Equal(t, true, result)
+		assert.Equal(t, false, result)
 	})
-
 }
